@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>scroll demo</title>
+  <style>
+      body{
+          background: url('mansplain-again-i-dare-ya-i-double-dare-ya.jpg') no-repeat left top 100%;
+      }
+  div {
+    color: blue;
+  }
+  .site-container-wrap{
+  background-color: #fff;
+	margin: 32px auto;
+	max-width: 1140px;
+	overflow: hidden;
+    padding: 36px;
+    height: 1600px;
+  }
+  p {
+    color: green;
+  }
+  span {
+    color: red;
+    display: none;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div class="site-container-wrap"></div>
+
+ 
+<script>
+
+var siteContainer = $('.site-container-wrap');
+
+$(window).scroll(function () {
+
+    clearTimeout($.data(this, 'scrollTimer'));
+    siteContainer.css({ 'opacity': 0.4 });
+    $.data(this, 'scrollTimer', setTimeout(function() {
+        siteContainer.css({'opacity': 1 });
+    }, 300));
+    
+});
+
+</script>
+ 
+</body>
+</html>
